@@ -3,6 +3,12 @@ import java.util.List;
 
 public class WendingMachine {
 
+    public Double getMoney(){
+        return money;
+    }
+
+    private Double money = 0.0;
+
     public List<Product> getProducts() {
         return products;
     }
@@ -21,5 +27,27 @@ public class WendingMachine {
         }
         return null;
     }
+
+    public Product buy(String name, Double price){
+        Product something = findProduct(name);
+        if(something == null) return null;
+        if(price == something.getPrice()){
+            products.remove(something);
+            money += price;
+            return something;
+        }
+        return null;
+    }
+
+    public String toString(){
+        StringBuilder showProducts = new StringBuilder();
+        for (Product prod : this.getProducts()){
+            showProducts.append(prod.toString())
+                    .append("\n");
+        }
+        showProducts.append(money);
+        return showProducts.toString();
+    }
+
 
 }

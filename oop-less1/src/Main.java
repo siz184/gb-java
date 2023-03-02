@@ -3,21 +3,18 @@ public class Main {
 
         WendingMachine store = new WendingMachine();
 
-        store.addProduct(new Product("Lays",130.0))
-            .addProduct(new Product("Lays1",131.0))
-            .addProduct(new Product("Lays2",132.0))
-            .addProduct(new Product("Lays3",133.0))
-            .addProduct(new Product("Lays4",134.0))
-            .addProduct(new Product("Lays5",135.0))
-            .addProduct(new Product("Lays6",136.0))
-            .addProduct(new CursedProducts("Lays6",136.0, 7))
-            .addProduct(new Drinks("Fanta",80.0, 0.33));
+        store.addProduct(new Product("Lays",130.00))
+            .addProduct(new Product("Lays1",131.00))
+            .addProduct(new Product("Lays2",132.00))
+            .addProduct(new CursedProducts("Milk",136.00, 7))
+            .addProduct(new Drinks("Fanta",80.00, 0.33));
 
-        for (Product prod : store.getProducts()){
-            System.out.println(prod);
-        }
-
-        System.out.println(store.findProduct("Lays"));
+        System.out.println(store.toString());
+        //System.out.println(store.findProduct("Lays"));
+        store.buy("Lays",130.00);
+        System.out.println("We bought Lays");
+        System.out.println(store.toString());
+        System.out.println(store.getMoney());
 
     }
 }
