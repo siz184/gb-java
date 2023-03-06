@@ -36,6 +36,7 @@ public class WendingMachine {
             money += price;
             return something;
         }
+        System.out.println("Price is wrong");
         return null;
     }
 

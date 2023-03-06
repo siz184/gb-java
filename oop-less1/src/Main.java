@@ -10,10 +10,14 @@ public class Main {
             .addProduct(new Drinks("Fanta",80.00, 0.33));
 
         System.out.println(store.toString());
-        store.buy("Lays",130.01);
-        System.out.println("We bought Lays");
-        System.out.println(store.toString());
-        System.out.println(store.getMoney());
+        if(store.buy("Lays",130.01)!=null){
+            System.out.println("We bought Lays");
+            System.out.println(store.toString());
+        }
+        if(store.buy("Fanta",80.00)!=null){
+            System.out.println("We bought Fanta");
+            System.out.println(store.toString());
+        }
 
     }
 }
