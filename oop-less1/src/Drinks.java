@@ -6,6 +6,6 @@ public class Drinks extends Product{
     }
 
     public String toString(){
-        return String.format("%s %2f",super.toString(), capacity);
+        return String.format("%s %2.2f",super.toString(), capacity);
     }
 }

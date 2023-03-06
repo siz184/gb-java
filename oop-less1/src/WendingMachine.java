@@ -31,7 +31,7 @@ public class WendingMachine {
     public Product buy(String name, Double price){
         Product something = findProduct(name);
         if(something == null) return null;
-        if(price == something.getPrice()){
+        if(Double.compare(price,something.getPrice()) == 0){
             products.remove(something);
             money += price;
             return something;
